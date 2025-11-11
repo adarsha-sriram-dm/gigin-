@@ -1,0 +1,1502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gigin.ai - 30-60-90 Day Marketing Strategy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0f1419;
+            color: #e1e8ed;
+        }
+        
+        .gradient-primary {
+            background: linear-gradient(135deg, #003d82 0%, #ff6b35 100%);
+        }
+        
+        .gradient-light {
+            background: linear-gradient(135deg, #1a2332 0%, #2a1f1a 100%);
+        }
+        
+        .glass-effect {
+            background: rgba(30, 41, 59, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 107, 53, 0.2);
+        }
+        
+        .glass-effect-light {
+            background: rgba(51, 65, 85, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 107, 53, 0.15);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(255, 107, 53, 0.2);
+        }
+        
+        .metric-card {
+            background: linear-gradient(135deg, rgba(0, 61, 130, 0.15) 0%, rgba(255, 107, 53, 0.15) 100%);
+            border-left: 4px solid #ff6b35;
+        }
+        
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: blur(10px);
+            background: rgba(15, 20, 25, 0.95);
+            border-bottom: 1px solid rgba(255, 107, 53, 0.1);
+        }
+        
+        .nav-link {
+            position: relative;
+            color: #e1e8ed;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: #ff6b35;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #ff6b35;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ff6b35 0%, #ffb366 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .timeline-item {
+            padding-left: 40px;
+            position: relative;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 16px;
+            height: 16px;
+            background: #ff6b35;
+            border-radius: 50%;
+            border: 3px solid #0f1419;
+            box-shadow: 0 0 0 3px #003d82;
+        }
+        
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 25px;
+            width: 2px;
+            height: calc(100% + 20px);
+            background: linear-gradient(to bottom, #003d82, #ff6b35);
+        }
+        
+        .badge-custom {
+            background: linear-gradient(135deg, #003d82 0%, #0d5aa7 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        .badge-warning {
+            background: linear-gradient(135deg, #ff6b35 0%, #ff8555 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        .progress-bar {
+            background: linear-gradient(90deg, #003d82 0%, #ff6b35 100%);
+            border-radius: 10px;
+            height: 8px;
+            overflow: hidden;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #e1e8ed;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: #ff6b35;
+            border-radius: 2px;
+        }
+        
+        .competitor-card {
+            border: 2px solid rgba(255, 107, 53, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .competitor-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #003d82, #ff6b35);
+        }
+        
+        .feature-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 107, 53, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #cbd5e1;
+        }
+        
+        .feature-list li::before {
+            content: '✓';
+            color: #ff6b35;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .cta-button {
+            background: linear-gradient(135deg, #ff6b35 0%, #ff8555 100%);
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(255, 107, 53, 0.3);
+        }
+        
+        .secondary-button {
+            border: 2px solid #ff6b35;
+            color: #ff6b35;
+            padding: 0.75rem 2rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            background: transparent;
+            cursor: pointer;
+        }
+        
+        .secondary-button:hover {
+            background: rgba(255, 107, 53, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .creator-badge {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.2) 0%, rgba(0, 61, 130, 0.2) 100%);
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            padding: 12px 20px;
+            border-radius: 999px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #cbd5e1;
+            font-size: 0.9rem;
+        }
+
+        .creator-name {
+            font-weight: 600;
+            color: #ff6b35;
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-900">
+    <!-- Navigation -->
+    <nav class="sticky-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg gradient-primary flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">G</span>
+                    </div>
+                    <span class="text-xl font-bold text-white">🚀 Gigin.ai</span>
+                </div>
+                
+                <!-- Navigation Links -->
+                <div class="hidden md:flex gap-8">
+                    <a href="#overview" class="nav-link">📊 Overview</a>
+                    <a href="#analysis" class="nav-link">🔍 Analysis</a>
+                    <a href="#strategy" class="nav-link">📈 Strategy</a>
+                    <a href="#kpis" class="nav-link">📉 KPIs</a>
+                    <a href="#roadmap" class="nav-link">🗓️ Roadmap</a>
+                </div>
+                
+                <!-- CTA Button -->
+                <button class="cta-button">
+                    🎯 Get Started
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-light py-20 px-4">
+        <div class="max-w-6xl mx-auto text-center fade-in">
+            <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">
+                📅 30-60-90 Day Digital Marketing Strategy
+            </h1>
+            <p class="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
+                Comprehensive competitive analysis and execution plan for <span class="font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#ff6b35] to-[#ffb366]">🎯 brand dominance</span> in AI-driven recruitment
+            </p>
+            
+            <!-- Creator Credit -->
+            <div class="mb-8 flex justify-center">
+                <div class="creator-badge">
+                    ✍️ Strategy Created By: <span class="creator-name">Adarsha Sriram</span>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <button class="cta-button">
+                    ⬇️ Download Full Report
+                </button>
+                <button class="secondary-button">
+                    👁️ View Strategy
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Executive Summary -->
+    <section class="py-20 px-4 bg-slate-900">
+        <div class="max-w-6xl mx-auto">
+            <div class="section-title mb-12">📋 Executive Summary</div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mt-16">
+                <div class="card-hover glass-effect p-8 rounded-xl">
+                    <div class="flex items-center justify-center w-14 h-14 rounded-lg bg-blue-900 mb-4">
+                        <i class="fas fa-rocket text-2xl text-orange-400"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-3">🤖 Agentic AI Positioning</h3>
+                    <p class="text-slate-300">Purpose-built for high-velocity hiring with 75% reduction in time-to-hire and 94% success rate</p>
+                </div>
+                
+                <div class="card-hover glass-effect p-8 rounded-xl">
+                    <div class="flex items-center justify-center w-14 h-14 rounded-lg bg-orange-900 mb-4">
+                        <i class="fas fa-shield-alt text-2xl text-orange-400"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-3">🛡️ Verification-First Trust</h3>
+                    <p class="text-slate-300">99.9% accurate background verification with 20+ compliance checks for regulated industries</p>
+                </div>
+                
+                <div class="card-hover glass-effect p-8 rounded-xl">
+                    <div class="flex items-center justify-center w-14 h-14 rounded-lg bg-blue-900 mb-4">
+                        <i class="fas fa-chart-line text-2xl text-orange-400"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-3">💰 Scale Affordably</h3>
+                    <p class="text-slate-300">Enterprise-grade features at SME prices. Free for job seekers, competitive for recruiters</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Analysis Section -->
+    <section id="analysis" class="py-20 px-4 bg-slate-800">
+        <div class="max-w-6xl mx-auto">
+            <div class="section-title mb-12">🎯 Business & Market Analysis</div>
+            
+            <!-- Target Audience -->
+            <div class="mt-16 mb-12">
+                <h3 class="text-2xl font-bold text-white mb-6">👥 Target Audience Segments</h3>
+                <div class="grid md:grid-cols-4 gap-6">
+                    <div class="border-l-4 border-orange-500 bg-slate-700 p-6 rounded-r-lg">
+                        <h4 class="font-bold text-white mb-2">🎯 Primary</h4>
+                        <p class="text-sm text-slate-300">SMEs, MSMEs, Startups (1000+ enterprises, 7L+ MSMEs)</p>
+                    </div>
+                    <div class="border-l-4 border-blue-500 bg-slate-700 p-6 rounded-r-lg">
+                        <h4 class="font-bold text-white mb-2">📈 Secondary</h4>
+                        <p class="text-sm text-slate-300">Mid-market Enterprises, Recruitment Agencies</p>
+                    </div>
+                    <div class="border-l-4 border-orange-500 bg-slate-700 p-6 rounded-r-lg">
+                        <h4 class="font-bold text-white mb-2">👨‍💼 Tertiary</h4>
+                        <p class="text-sm text-slate-300">Job seekers (Formal + Gig Economy segments)</p>
+                    </div>
+                    <div class="border-l-4 border-blue-500 bg-slate-700 p-6 rounded-r-lg">
+                        <h4 class="font-bold text-white mb-2">🌍 Geographic</h4>
+                        <p class="text-sm text-slate-300">Pan-India with tier-1 & emerging cities focus</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Competitors Section -->
+            <div class="mt-20">
+                <h3 class="text-2xl font-bold text-white mb-8">⚔️ Top 5 Competitors Analysis</h3>
+                
+                <div class="space-y-6">
+                    <div class="competitor-card glass-effect p-6 rounded-xl card-hover">
+                        <div class="grid md:grid-cols-5 gap-6">
+                            <div>
+                                <h4 class="font-bold text-white mb-2">💼 Naukri.com</h4>
+                                <span class="badge-custom">Enterprise Focus</span>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 mb-1">USP</p>
+                                <p class="text-sm font-semibold text-slate-100">40+ years, massive reach, 40M+ database</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 mb-1">💪 Strength</p>
+                                <p class="text-sm text-green-400 font-semibold">Brand trust, recruiter tools</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 mb-1">⚠️ Weakness</p>
+                                <p class="text-sm text-red-400 font-semibold">Outdated UI, expensive</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 mb-1">vs Gigin</p>
+                                <p class="text-sm font-semibold text-orange-400">Speed + Affordability</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="competitor-card glass-effect p-6 rounded-xl card-hover">
+                        <div class="grid md:grid-cols-5 gap-6">
+                            <div>
+                                <h4 class="font-bold text-white mb-2">🔗 Apna</h4>
+                                <span class="badge-warning">Gig-Focused</span>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 mb-1">USP</p>
+                                <p class="text-sm font-semibold text-slate-100">Community-driven, 50M users, vernacular</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 mb-1">💪 Strength</p>
+                                <p class="text-sm text-green-400 font-semibold">Community, hyperlocal reach</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 mb-1">⚠️ Weakness</p>
+                                <p class="text-sm text-red-400 font-semibold">Limited senior roles, less enterprise</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 mb-1">vs Gigin</p>
+                                <p class="text-sm font-semibold text-orange-400">Verification + Quality</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="competitor-card glass-effect p-6 rounded-xl card-hover">
+                        <div class="grid md:grid-cols-5 gap-6">
+                            <div>
+                                <h4 class="font-bold text-white mb-2">🎬 Foundit</h4>
+                                <span class="badge-custom">AI-Powered</span>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 mb-1">USP</p>
+                                <p class="text-sm font-semibold text-slate-100">AI recommendations, celebrity partnerships</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 mb-1">💪 Strength</p>
+                                <p class="text-sm text-green-400 font-semibold">Celebrity brand partnerships</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 mb-1">⚠️ Weakness</p>
+                                <p class="text-sm text-red-400 font-semibold">Still building market share</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 mb-1">vs Gigin</p>
+                                <p class="text-sm font-semibold text-orange-400">Agentic AI, SME focus</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="competitor-card glass-effect p-6 rounded-xl card-hover">
+                        <div class="grid md:grid-cols-5 gap-6">
+                            <div>
+                                <h4 class="font-bold text-white mb-2">💼 LinkedIn</h4>
+                                <span class="badge-custom">Global Network</span>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 mb-1">USP</p>
+                                <p class="text-sm font-semibold text-slate-100">Global reach, 900M users, direct access</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 mb-1">💪 Strength</p>
+                                <p class="text-sm text-green-400 font-semibold">Global presence, decision-makers</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 mb-1">⚠️ Weakness</p>
+                                <p class="text-sm text-red-400 font-semibold">Not India-centric, expensive</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 mb-1">vs Gigin</p>
+                                <p class="text-sm font-semibold text-orange-400">India-first, affordable</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="competitor-card glass-effect p-6 rounded-xl card-hover">
+                        <div class="grid md:grid-cols-5 gap-6">
+                            <div>
+                                <h4 class="font-bold text-white mb-2">🚀 Wellfound</h4>
+                                <span class="badge-warning">Startup-Focused</span>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 mb-1">USP</p>
+                                <p class="text-sm font-semibold text-slate-100">Startup ecosystem, curated talent</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 mb-1">💪 Strength</p>
+                                <p class="text-sm text-green-400 font-semibold">Niche domination, high engagement</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 mb-1">⚠️ Weakness</p>
+                                <p class="text-sm text-red-400 font-semibold">Limited to tech sector, smaller volume</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 mb-1">vs Gigin</p>
+                                <p class="text-sm font-semibold text-orange-400">Cross-industry, verification</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SWOT Analysis -->
+    <section class="py-20 px-4 gradient-light">
+        <div class="max-w-6xl mx-auto">
+            <div class="section-title mb-12">💡 SWOT Analysis</div>
+            
+            <div class="grid md:grid-cols-2 gap-8 mt-16">
+                <!-- Strengths -->
+                <div class="glass-effect p-8 rounded-xl card-hover">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-12 h-12 rounded-lg bg-green-900 flex items-center justify-center">
+                            <span class="text-2xl">⭐</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Strengths</h3>
+                    </div>
+                    <ul class="feature-list">
+                        <li>🚀 Agentic AI differentiation (75% time reduction)</li>
+                        <li>✅ Verification-first compliance advantage</li>
+                        <li>⚡ 7-day average time-to-hire</li>
+                        <li>💳 Dual monetization model (B2B + Premium)</li>
+                        <li>🤝 Human-centric AI positioning</li>
+                        <li>🎁 Free-for-all-job-seekers model</li>
+                    </ul>
+                </div>
+
+                <!-- Weaknesses -->
+                <div class="glass-effect p-8 rounded-xl card-hover">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-12 h-12 rounded-lg bg-red-900 flex items-center justify-center">
+                            <span class="text-2xl">⚠️</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Weaknesses</h3>
+                    </div>
+                    <ul class="feature-list">
+                        <li>📊 Limited brand awareness (niche circles)</li>
+                        <li>📉 Smaller user database vs competitors</li>
+                        <li>🎯 Market positioning ambiguity</li>
+                        <li>📝 Minimal thought leadership content</li>
+                        <li>🌏 No geographic expansion yet</li>
+                        <li>📋 Enterprise trust gap (fewer case studies)</li>
+                    </ul>
+                </div>
+
+                <!-- Opportunities -->
+                <div class="glass-effect p-8 rounded-xl card-hover">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-12 h-12 rounded-lg bg-blue-900 flex items-center justify-center">
+                            <span class="text-2xl">💡</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Opportunities</h3>
+                    </div>
+                    <ul class="feature-list">
+                        <li>📈 Growing agentic AI market demand</li>
+                        <li>🔐 Verification-focused narrative (post-fraud era)</li>
+                        <li>🏪 SME/MSME underserved segment</li>
+                        <li>🎭 Niche vertical expansion (Tech, Logistics, Hospitality)</li>
+                        <li>🌐 Global India story (NRI & Gulf markets)</li>
+                        <li>👫 Community & loyalty building</li>
+                    </ul>
+                </div>
+
+                <!-- Threats -->
+                <div class="glass-effect p-8 rounded-xl card-hover">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-12 h-12 rounded-lg bg-orange-900 flex items-center justify-center">
+                            <span class="text-2xl">🚨</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Threats</h3>
+                    </div>
+                    <ul class="feature-list">
+                        <li>🔧 Naukri's AI upgrades + massive database</li>
+                        <li>🦄 Apna's unicorn status & momentum</li>
+                        <li>🔗 LinkedIn's enterprise AI push</li>
+                        <li>🎯 Wellfound's niche domination</li>
+                        <li>🌍 International competitors entering India</li>
+                        <li>⚖️ Regulatory & data privacy compliance costs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategy Phases -->
+    <section id="strategy" class="py-20 px-4 bg-slate-800">
+        <div class="max-w-6xl mx-auto">
+            <div class="section-title mb-12">📊 30-60-90 Day Strategy</div>
+            
+            <div class="mt-16 space-y-12">
+                <!-- Phase 1 -->
+                <div class="border-l-4 border-blue-500 pl-8 py-6 card-hover">
+                    <div class="flex items-start justify-between mb-6">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-2">🎯 Phase 1: Foundation Building</h3>
+                            <p class="text-slate-300">Days 1-30 | Theme: "Launch → Audit → Foundation"</p>
+                        </div>
+                        <span class="badge-custom">500 Leads 🎁</span>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-3 gap-6 mt-6">
+                        <div>
+                            <h4 class="font-semibold text-white mb-3 flex items-center gap-2">
+                                <span>🎯</span> Goals
+                            </h4>
+                            <ul class="space-y-2 text-sm text-slate-300">
+                                <li>📈 • 40% brand awareness increase</li>
+                                <li>🎁 • 500+ qualified leads</li>
+                                <li>✍️ • 5+ thought leadership assets</li>
+                                <li>📧 • 2,000+ email subscribers</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white mb-3 flex items-center gap-2">
+                                <span>📋</span> Key Actions
+                            </h4>
+                            <ul class="space-y-2 text-sm text-slate-300">
+                                <li>🔍 • Competitive audit</li>
+                                <li>📄 • Segmented landing pages</li>
+                                <li>📊 • KPI dashboard setup</li>
+                                <li>📅 • Content calendar creation</li>
+                                <li>💌 • Email sequences launch</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white mb-3 flex items-center gap-2">
+                                <span>📈</span> KPIs
+                            </h4>
+                            <ul class="space-y-2 text-sm text-slate-300">
+                                <li>🌐 • Website: 5,000 sessions</li>
+                                <li>📧 • Email: 2,000 subscribers</li>
+                                <li>🔗 • LinkedIn: 5,000 followers</li>
+                                <li>🔑 • SEO: 5 keywords top 20</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 2 -->
+                <div class="border-l-4 border-orange-500 pl-8 py-6 card-hover">
+                    <div class="flex items-start justify-between mb-6">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-2">🚀 Phase 2: Growth Execution</h3>
+                            <p class="text-slate-300">Days 31-60 | Theme: "Amplify → Engage → Convert"</p>
+                        </div>
+                        <span class="badge-warning">2,000 Leads 🚀</span>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-3 gap-6 mt-6">
+                        <div>
+                            <h4 class="font-semibold text-white mb-3 flex items-center gap-2">
+                                <span>🎯</span> Goals
+                            </h4>
+                            <ul class="space-y-2 text-sm text-slate-300">
+                                <li>💰 • 2,000+ qualified leads</li>
+                                <li>📊 • 200% traffic increase</li>
+                                <li>👥 • 15,000 followers</li>
+                                <li>📚 • 3 case studies published</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white mb-3 flex items-center gap-2">
+                                <span>📋</span> Key Actions
+                            </h4>
+                            <ul class="space-y-2 text-sm text-slate-300">
+                                <li>💳 • 3 LinkedIn campaigns (₹4.5L)</li>
+                                <li>📝 • 8 SEO blog posts</li>
+                                <li>🎤 • 3 webinars hosted</li>
+                                <li>🌟 • Influencer partnerships (5+)</li>
+                                <li>👨‍👩‍👧‍👦 • Community hub launch</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white mb-3 flex items-center gap-2">
+                                <span>📈</span> KPIs
+                            </h4>
+                            <ul class="space-y-2 text-sm text-slate-300">
+                                <li>🌐 • Website: 15,000 sessions</li>
+                                <li>📧 • Email: 5,000 subscribers</li>
+                                <li>🔗 • LinkedIn: 15,000 followers</li>
+                                <li>💹 • Paid ROAS: 3:1 minimum</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 3 -->
+                <div class="border-l-4 border-green-500 pl-8 py-6 card-hover">
+                    <div class="flex items-start justify-between mb-6">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-2">🏆 Phase 3: Optimization & Scaling</h3>
+                            <p class="text-slate-300">Days 61-90 | Theme: "Optimize → Scale → Dominate"</p>
+                        </div>
+                        <span class="badge-custom">5,000 Leads 🏆</span>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-3 gap-6 mt-6">
+                        <div>
+                            <h4 class="font-semibold text-white mb-3 flex items-center gap-2">
+                                <span>🎯</span> Goals
+                            </h4>
+                            <ul class="space-y-2 text-sm text-slate-300">
+                                <li>⭐ • 5,000 Phase 3 leads</li>
+                                <li>💎 • 7,500 cumulative leads</li>
+                                <li>📊 • 30,000 monthly visitors</li>
+                                <li>💰 • 100-150 paying customers</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white mb-3 flex items-center gap-2">
+                                <span>📋</span> Key Actions
+                            </h4>
+                            <ul class="space-y-2 text-sm text-slate-300">
+                                <li>💳 • Scale campaigns (₹15-18L)</li>
+                                <li>📖 • 3 whitepapers published</li>
+                                <li>🎥 • 20+ video content pieces</li>
+                                <li>🎙️ • Podcast launch (12 episodes)</li>
+                                <li>🎪 • Virtual summit (1 day event)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white mb-3 flex items-center gap-2">
+                                <span>📈</span> KPIs
+                            </h4>
+                            <ul class="space-y-2 text-sm text-slate-300">
+                                <li>🌐 • Website: 30,000 sessions</li>
+                                <li>👥 • LinkedIn: 25,000 followers</li>
+                                <li>▶️ • YouTube: 5,000 subscribers</li>
+                                <li>💹 • Paid ROAS: 4:1 minimum</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Channel Mix -->
+    <section class="py-20 px-4 bg-slate-900">
+        <div class="max-w-6xl mx-auto">
+            <div class="section-title mb-12">🎨 Marketing Channel Mix</div>
+            
+            <div class="mt-16">
+                <div class="space-y-6">
+                    <!-- Phase 1 -->
+                    <div class="glass-effect p-8 rounded-xl">
+                        <h4 class="font-bold text-white mb-6 flex items-center gap-2">
+                            <span class="w-8 h-8 rounded-full bg-blue-500 text-white flex items-center justify-center text-sm font-bold">1️⃣</span>
+                            Phase 1 - Foundation (30 Days)
+                        </h4>
+                        <div class="grid md:grid-cols-5 gap-4">
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-orange-400 mb-2">40%</div>
+                                <p class="text-sm text-slate-300">📝 Content & SEO</p>
+                                <div class="progress-bar mt-3" style="width: 100%; height: 4px;"></div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-orange-400 mb-2">20%</div>
+                                <p class="text-sm text-slate-300">📧 Email Marketing</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-orange-400 mb-2">25%</div>
+                                <p class="text-sm text-slate-300">🔗 LinkedIn Organic</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-orange-400 mb-2">10%</div>
+                                <p class="text-sm text-slate-300">📰 PR & Partnerships</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-orange-400 mb-2">5%</div>
+                                <p class="text-sm text-slate-300">🧪 Other Testing</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Phase 2 -->
+                    <div class="glass-effect p-8 rounded-xl">
+                        <h4 class="font-bold text-white mb-6 flex items-center gap-2">
+                            <span class="w-8 h-8 rounded-full bg-orange-500 text-white flex items-center justify-center text-sm font-bold">2️⃣</span>
+                            Phase 2 - Growth (30 Days)
+                        </h4>
+                        <div class="grid md:grid-cols-5 gap-4">
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-orange-400 mb-2">35%</div>
+                                <p class="text-sm text-slate-300">💳 Paid Ads (₹4.5L)</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-orange-400 mb-2">25%</div>
+                                <p class="text-sm text-slate-300">📝 Content & SEO</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-orange-400 mb-2">15%</div>
+                                <p class="text-sm text-slate-300">📧 Email Marketing</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-orange-400 mb-2">15%</div>
+                                <p class="text-sm text-slate-300">⭐ Influencers</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-orange-400 mb-2">10%</div>
+                                <p class="text-sm text-slate-300">👫 Community</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Phase 3 -->
+                    <div class="glass-effect p-8 rounded-xl">
+                        <h4 class="font-bold text-white mb-6 flex items-center gap-2">
+                            <span class="w-8 h-8 rounded-full bg-green-500 text-white flex items-center justify-center text-sm font-bold">3️⃣</span>
+                            Phase 3 - Scale (30 Days)
+                        </h4>
+                        <div class="grid md:grid-cols-5 gap-4">
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-orange-400 mb-2">40%</div>
+                                <p class="text-sm text-slate-300">💳 Paid Ads (₹15-18L)</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-orange-400 mb-2">20%</div>
+                                <p class="text-sm text-slate-300">📝 Content & SEO</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-orange-400 mb-2">12%</div>
+                                <p class="text-sm text-slate-300">📧 Email Marketing</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-orange-400 mb-2">15%</div>
+                                <p class="text-sm text-slate-300">🤝 Partnerships</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-orange-400 mb-2">13%</div>
+                                <p class="text-sm text-slate-300">👫 Community & Other</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KPI Dashboard -->
+    <section id="kpis" class="py-20 px-4 bg-slate-800">
+        <div class="max-w-6xl mx-auto">
+            <div class="section-title mb-12">📉 90-Day KPI Dashboard</div>
+            
+            <div class="mt-16">
+                <!-- Primary KPIs -->
+                <h3 class="text-2xl font-bold text-white mb-8">💰 Primary KPIs (Revenue-Focused)</h3>
+                
+                <div class="grid md:grid-cols-3 gap-6 mb-16">
+                    <div class="metric-card p-6 rounded-lg">
+                        <p class="text-sm text-slate-300 mb-2">🎁 Qualified Leads Generated</p>
+                        <div class="grid grid-cols-3 gap-4">
+                            <div>
+                                <p class="text-xs text-slate-400">Phase 1</p>
+                                <p class="stat-number text-2xl">500</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Phase 2</p>
+                                <p class="stat-number text-2xl">2K</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Phase 3</p>
+                                <p class="stat-number text-2xl">5K</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="metric-card p-6 rounded-lg">
+                        <p class="text-sm text-slate-300 mb-2">✅ Free Trial Signups</p>
+                        <div class="grid grid-cols-3 gap-4">
+                            <div>
+                                <p class="text-xs text-slate-400">Phase 1</p>
+                                <p class="stat-number text-2xl">100</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Phase 2</p>
+                                <p class="stat-number text-2xl">400</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Phase 3</p>
+                                <p class="stat-number text-2xl">1K</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="metric-card p-6 rounded-lg">
+                        <p class="text-sm text-slate-300 mb-2">💼 Paying Customers</p>
+                        <div class="grid grid-cols-3 gap-4">
+                            <div>
+                                <p class="text-xs text-slate-400">Phase 1</p>
+                                <p class="stat-number text-2xl">10-15</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Phase 2</p>
+                                <p class="stat-number text-2xl">40-50</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Phase 3</p>
+                                <p class="stat-number text-2xl">100-150</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="metric-card p-6 rounded-lg">
+                        <p class="text-sm text-slate-300 mb-2">💹 Monthly Recurring Revenue</p>
+                        <div class="grid grid-cols-3 gap-4">
+                            <div>
+                                <p class="text-xs text-slate-400">Phase 1</p>
+                                <p class="stat-number text-2xl">₹5-10L</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Phase 2</p>
+                                <p class="stat-number text-2xl">₹20-30L</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Phase 3</p>
+                                <p class="stat-number text-2xl">₹50-75L</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="metric-card p-6 rounded-lg">
+                        <p class="text-sm text-slate-300 mb-2">🏷️ Cost Per Lead (CPL)</p>
+                        <div class="grid grid-cols-3 gap-4">
+                            <div>
+                                <p class="text-xs text-slate-400">Phase 1</p>
+                                <p class="stat-number text-2xl">₹5-8K</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Phase 2</p>
+                                <p class="stat-number text-2xl">₹3-5K</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Phase 3</p>
+                                <p class="stat-number text-2xl">₹2-3K</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="metric-card p-6 rounded-lg">
+                        <p class="text-sm text-slate-300 mb-2">🎯 Customer Acquisition Cost</p>
+                        <div class="grid grid-cols-3 gap-4">
+                            <div>
+                                <p class="text-xs text-slate-400">Phase 1</p>
+                                <p class="stat-number text-2xl">₹50-80K</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Phase 2</p>
+                                <p class="stat-number text-2xl">₹30-50K</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Phase 3</p>
+                                <p class="stat-number text-2xl">₹20-30K</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Growth KPIs -->
+                <h3 class="text-2xl font-bold text-white mb-8">📊 Secondary KPIs (Growth-Focused)</h3>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="metric-card p-6 rounded-lg">
+                        <p class="text-sm text-slate-300 mb-2">🌐 Website Traffic</p>
+                        <div class="grid grid-cols-3 gap-4 text-center">
+                            <div>
+                                <p class="text-xs text-slate-400">Phase 1</p>
+                                <p class="stat-number text-xl">5K</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Phase 2</p>
+                                <p class="stat-number text-xl">15K</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Phase 3</p>
+                                <p class="stat-number text-xl">30K</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="metric-card p-6 rounded-lg">
+                        <p class="text-sm text-slate-300 mb-2">📧 Email Subscribers</p>
+                        <div class="grid grid-cols-3 gap-4 text-center">
+                            <div>
+                                <p class="text-xs text-slate-400">Phase 1</p>
+                                <p class="stat-number text-xl">2K</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Phase 2</p>
+                                <p class="stat-number text-xl">5K</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Phase 3</p>
+                                <p class="stat-number text-xl">10K</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="metric-card p-6 rounded-lg">
+                        <p class="text-sm text-slate-300 mb-2">🔗 LinkedIn Followers</p>
+                        <div class="grid grid-cols-3 gap-4 text-center">
+                            <div>
+                                <p class="text-xs text-slate-400">Phase 1</p>
+                                <p class="stat-number text-xl">5K</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Phase 2</p>
+                                <p class="stat-number text-xl">15K</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Phase 3</p>
+                                <p class="stat-number text-xl">25K</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="metric-card p-6 rounded-lg">
+                        <p class="text-sm text-slate-300 mb-2">🔑 SEO Keyword Rankings (Top 20)</p>
+                        <div class="grid grid-cols-3 gap-4 text-center">
+                            <div>
+                                <p class="text-xs text-slate-400">Phase 1</p>
+                                <p class="stat-number text-xl">5</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Phase 2</p>
+                                <p class="stat-number text-xl">20</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Phase 3</p>
+                                <p class="stat-number text-xl">50+</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="metric-card p-6 rounded-lg">
+                        <p class="text-sm text-slate-300 mb-2">📝 Blog Traffic</p>
+                        <div class="grid grid-cols-3 gap-4 text-center">
+                            <div>
+                                <p class="text-xs text-slate-400">Phase 1</p>
+                                <p class="stat-number text-xl">1K</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Phase 2</p>
+                                <p class="stat-number text-xl">3K</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Phase 3</p>
+                                <p class="stat-number text-xl">8K</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="metric-card p-6 rounded-lg">
+                        <p class="text-sm text-slate-300 mb-2">💹 Paid Ad ROAS</p>
+                        <div class="grid grid-cols-3 gap-4 text-center">
+                            <div>
+                                <p class="text-xs text-slate-400">Phase 1</p>
+                                <p class="stat-number text-xl">-</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Phase 2</p>
+                                <p class="stat-number text-xl">3:1</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Phase 3</p>
+                                <p class="stat-number text-xl">4:1+</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 90-Day Success Scorecard -->
+    <section class="py-20 px-4 gradient-light">
+        <div class="max-w-6xl mx-auto">
+            <div class="section-title mb-12">🏆 90-Day Success Scorecard</div>
+            
+            <div class="mt-16 grid md:grid-cols-3 gap-8">
+                <!-- Green Level -->
+                <div class="glass-effect-light p-8 rounded-xl card-hover">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-12 h-12 rounded-full bg-green-900 flex items-center justify-center">
+                            <span class="text-2xl">✅</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white">Green - Minimum</h3>
+                    </div>
+                    <p class="text-sm text-slate-300 mb-6 pb-6 border-b border-slate-600">Success Threshold - Key targets met</p>
+                    <ul class="feature-list">
+                        <li>7,500+ cumulative leads</li>
+                        <li>100-150 paying customers</li>
+                        <li>₹50-75L MRR</li>
+                        <li>25,000+ followers</li>
+                        <li>30,000+ visitors/month</li>
+                        <li>4:1 ROAS minimum</li>
+                    </ul>
+                </div>
+
+                <!-- Blue Level -->
+                <div class="glass-effect-light p-8 rounded-xl card-hover border-2 border-blue-500">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-12 h-12 rounded-full bg-blue-900 flex items-center justify-center">
+                            <span class="text-2xl">⭐</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white">Blue - Optimal</h3>
+                    </div>
+                    <p class="text-sm text-slate-300 mb-6 pb-6 border-b border-slate-600">Target Performance - Exceeds baseline</p>
+                    <ul class="feature-list">
+                        <li>10,000+ cumulative leads</li>
+                        <li>200+ paying customers</li>
+                        <li>₹100+ lakhs MRR</li>
+                        <li>35,000+ followers</li>
+                        <li>40,000+ visitors/month</li>
+                        <li>5:1 ROAS</li>
+                        <li>3+ enterprise deals</li>
+                        <li>80+ SEO keywords top 20</li>
+                    </ul>
+                </div>
+
+                <!-- Gold Level -->
+                <div class="glass-effect-light p-8 rounded-xl card-hover">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-12 h-12 rounded-full bg-yellow-900 flex items-center justify-center">
+                            <span class="text-2xl">👑</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white">Gold - Maximum</h3>
+                    </div>
+                    <p class="text-sm text-slate-300 mb-6 pb-6 border-b border-slate-600">Exceeds Expectations - Market leader</p>
+                    <ul class="feature-list">
+                        <li>15,000+ cumulative leads</li>
+                        <li>300+ paying customers</li>
+                        <li>₹150+ lakhs MRR</li>
+                        <li>50,000+ followers</li>
+                        <li>50,000+ visitors/month</li>
+                        <li>6:1+ ROAS</li>
+                        <li>5+ enterprise partnerships</li>
+                        <li>Viral moment (10K+ reach)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Growth Tactics -->
+    <section class="py-20 px-4 bg-slate-800">
+        <div class="max-w-6xl mx-auto">
+            <div class="section-title mb-12">💡 10 Growth Tactics to Outsmart Competitors</div>
+            
+            <div class="mt-16 grid md:grid-cols-2 gap-8">
+                <div class="card-hover glass-effect p-6 rounded-xl">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-blue-900 flex items-center justify-center flex-shrink-0 text-xl">
+                            🤖
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white mb-2">1. "Agentic AI" Positioning</h4>
+                            <p class="text-sm text-slate-300">More sophisticated than "AI-powered." Thought leadership on agentic AI difference.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-hover glass-effect p-6 rounded-xl">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-orange-900 flex items-center justify-center flex-shrink-0 text-xl">
+                            🛡️
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white mb-2">2. Verification-First Authority</h4>
+                            <p class="text-sm text-slate-300">Own compliance niche. Partner with regulatory bodies. Target BFSI, healthcare.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-hover glass-effect p-6 rounded-xl">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-blue-900 flex items-center justify-center flex-shrink-0 text-xl">
+                            🏪
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white mb-2">3. SME-First Narrative</h4>
+                            <p class="text-sm text-slate-300">Build for SMEs with enterprise-grade hiring. Own underserved segment.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-hover glass-effect p-6 rounded-xl">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-orange-900 flex items-center justify-center flex-shrink-0 text-xl">
+                            ⚡
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white mb-2">4. Speed as Viral Hook</h4>
+                            <p class="text-sm text-slate-300">"7-day average time-to-hire" metric. Create viral math content and infographics.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-hover glass-effect p-6 rounded-xl">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-blue-900 flex items-center justify-center flex-shrink-0 text-xl">
+                            💭
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white mb-2">5. Problem-Solving Thought Leadership</h4>
+                            <p class="text-sm text-slate-300">Weekly LinkedIn series: "Recruiter Problems Weekly" with solutions.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-hover glass-effect p-6 rounded-xl">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-orange-900 flex items-center justify-center flex-shrink-0 text-xl">
+                            🏆
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white mb-2">6. Community Gamification</h4>
+                            <p class="text-sm text-slate-300">Recruitment Hub with leaderboards, badges, recognition. Build network moat.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-hover glass-effect p-6 rounded-xl">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-blue-900 flex items-center justify-center flex-shrink-0 text-xl">
+                            🎯
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white mb-2">7. Niche Vertical Expansion</h4>
+                            <p class="text-sm text-slate-300">"Gigin for Logistics," "Gigin for Tech." Rapid wins with specific solutions.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-hover glass-effect p-6 rounded-xl">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-orange-900 flex items-center justify-center flex-shrink-0 text-xl">
+                            📊
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white mb-2">8. Competitive Comparison Content</h4>
+                            <p class="text-sm text-slate-300">Honest "Gigin vs. Naukri" guides. Rank for competitive keywords.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-hover glass-effect p-6 rounded-xl">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-blue-900 flex items-center justify-center flex-shrink-0 text-xl">
+                            👤
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white mb-2">9. Founder Personal Brand</h4>
+                            <p class="text-sm text-slate-300">CEO on LinkedIn weekly. Industry articles, media interviews, speaking.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-hover glass-effect p-6 rounded-xl">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-orange-900 flex items-center justify-center flex-shrink-0 text-xl">
+                            📈
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white mb-2">10. Data Transparency Tool</h4>
+                            <p class="text-sm text-slate-300">Launch "Gigin Hiring Index." Monthly benchmarks, interactive dashboard.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Implementation Roadmap -->
+    <section id="roadmap" class="py-20 px-4 bg-slate-900">
+        <div class="max-w-6xl mx-auto">
+            <div class="section-title mb-12">🗓️ 12-Week Implementation Roadmap</div>
+            
+            <div class="mt-16 space-y-8">
+                <div class="timeline-item">
+                    <div class="glass-effect p-6 rounded-lg">
+                        <h4 class="font-bold text-white mb-3">📅 Week 1-2: Launch Foundation</h4>
+                        <p class="text-sm text-slate-300 mb-3">Competitive audit, segmented landing pages, KPI dashboard, content calendar</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-blue-900 text-orange-400 px-3 py-1 rounded-full">🔍 Audit</span>
+                            <span class="text-xs bg-blue-900 text-orange-400 px-3 py-1 rounded-full">📄 Landing Pages</span>
+                            <span class="text-xs bg-blue-900 text-orange-400 px-3 py-1 rounded-full">📊 KPI Setup</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="glass-effect p-6 rounded-lg">
+                        <h4 class="font-bold text-white mb-3">📅 Week 3-4: Phase 1 Completion</h4>
+                        <p class="text-sm text-slate-300 mb-3">Blog posts live, email list, automation setup, LinkedIn organic launch</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-blue-900 text-orange-400 px-3 py-1 rounded-full">📝 Blog Launch</span>
+                            <span class="text-xs bg-blue-900 text-orange-400 px-3 py-1 rounded-full">📧 Email Setup</span>
+                            <span class="text-xs bg-blue-900 text-orange-400 px-3 py-1 rounded-full">🔗 LinkedIn Content</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="glass-effect p-6 rounded-lg">
+                        <h4 class="font-bold text-white mb-3">📅 Week 5-6: Phase 2 Kickoff</h4>
+                        <p class="text-sm text-slate-300 mb-3">Paid campaigns live (₹4.5L), webinar 1, case studies, influencer outreach</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-orange-900 text-orange-400 px-3 py-1 rounded-full">💳 Paid Ads</span>
+                            <span class="text-xs bg-orange-900 text-orange-400 px-3 py-1 rounded-full">🎤 Webinar</span>
+                            <span class="text-xs bg-orange-900 text-orange-400 px-3 py-1 rounded-full">📚 Case Studies</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="glass-effect p-6 rounded-lg">
+                        <h4 class="font-bold text-white mb-3">📅 Week 7-8: Growth Acceleration</h4>
+                        <p class="text-sm text-slate-300 mb-3">Host webinars 1-3, email campaigns, whitepapers, 10K LinkedIn followers</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-orange-900 text-orange-400 px-3 py-1 rounded-full">🎤 Webinars</span>
+                            <span class="text-xs bg-orange-900 text-orange-400 px-3 py-1 rounded-full">💌 Email Campaigns</span>
+                            <span class="text-xs bg-orange-900 text-orange-400 px-3 py-1 rounded-full">📖 Whitepapers</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="glass-effect p-6 rounded-lg">
+                        <h4 class="font-bold text-white mb-3">📅 Week 9-10: Phase 3 Optimization</h4>
+                        <p class="text-sm text-slate-300 mb-3">Performance analysis, scale winning campaigns, YouTube launch, podcast production</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-green-900 text-green-400 px-3 py-1 rounded-full">📊 Analysis</span>
+                            <span class="text-xs bg-green-900 text-green-400 px-3 py-1 rounded-full">📈 Scale</span>
+                            <span class="text-xs bg-green-900 text-green-400 px-3 py-1 rounded-full">▶️ YouTube</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="glass-effect p-6 rounded-lg">
+                        <h4 class="font-bold text-white mb-3">📅 Week 11-12: Final Push 🎯</h4>
+                        <p class="text-sm text-slate-300 mb-3">Virtual summit, enterprise deals, 25K followers, 3 whitepapers, 90-day review</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-green-900 text-green-400 px-3 py-1 rounded-full">🎪 Summit</span>
+                            <span class="text-xs bg-green-900 text-green-400 px-3 py-1 rounded-full">💼 Enterprise</span>
+                            <span class="text-xs bg-green-900 text-green-400 px-3 py-1 rounded-full">📋 Review</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTAs and Resources -->
+    <section class="py-20 px-4 bg-slate-800">
+        <div class="max-w-4xl mx-auto">
+            <div class="gradient-light rounded-2xl p-12 text-center">
+                <h2 class="text-3xl font-bold text-white mb-4">🚀 Ready to Dominate Your Market?</h2>
+                <p class="text-slate-300 mb-8 text-lg">Execute this strategy immediately to establish Gigin.ai as the AI-driven recruitment leader.</p>
+                
+                <div class="flex flex-col md:flex-row gap-4 justify-center">
+                    <button class="cta-button">
+                        <i class="fas fa-download mr-2"></i> ⬇️ Download Full Report
+                    </button>
+                    <button class="secondary-button">
+                        <i class="fas fa-calendar mr-2"></i> 📅 Schedule Consultation
+                    </button>
+                </div>
+
+                <div class="mt-12 grid md:grid-cols-3 gap-8">
+                    <div>
+                        <div class="text-3xl font-bold text-orange-400 mb-2">50+</div>
+                        <p class="text-sm text-slate-300">📄 Pages of Strategic Content</p>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-orange-400 mb-2">100+</div>
+                        <p class="text-sm text-slate-300">💡 Actionable Tactics</p>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-orange-400 mb-2">7.5K+</div>
+                        <p class="text-sm text-slate-300">🎁 Lead Generation Target</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-300 py-12 px-4 border-t border-slate-700">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h4 class="font-bold text-white mb-4">🚀 Gigin.ai</h4>
+                    <p class="text-sm text-slate-400">Agentic AI for Smart Hiring</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white mb-4">🔗 Quick Links</h4>
+                    <ul class="space-y-2 text-slate-400 text-sm">
+                        <li><a href="#overview" class="hover:text-orange-400 transition">📊 Overview</a></li>
+                        <li><a href="#analysis" class="hover:text-orange-400 transition">🔍 Analysis</a></li>
+                        <li><a href="#strategy" class="hover:text-orange-400 transition">📈 Strategy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white mb-4">📚 Resources</h4>
+                    <ul class="space-y-2 text-slate-400 text-sm">
+                        <li><a href="#kpis" class="hover:text-orange-400 transition">📉 KPI Dashboard</a></li>
+                        <li><a href="#roadmap" class="hover:text-orange-400 transition">🗓️ Roadmap</a></li>
+                        <li><a href="#" class="hover:text-orange-400 transition">⬇️ Download Report</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white mb-4">🔗 Connect</h4>
+                    <div class="flex gap-4">
+                        <a href="#" class="text-slate-400 hover:text-orange-400 transition"><i class="fab fa-linkedin text-xl"></i></a>
+                        <a href="#" class="text-slate-400 hover:text-orange-400 transition"><i class="fab fa-twitter text-xl"></i></a>
+                        <a href="#" class="text-slate-400 hover:text-orange-400 transition"><i class="fab fa-facebook text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-700 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center text-slate-400 text-sm gap-4">
+                    <div>
+                        <p>&copy; 2025 Gigin.ai. All rights reserved. 🎯</p>
+                        <p class="text-xs text-slate-500 mt-1">✍️ Strategy Created By: <span class="text-orange-400">Adarsha Sriram</span></p>
+                    </div>
+                    <p>30-60-90 Day Digital Marketing Strategy | Version 1.0 | 📅 Nov 2025</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.card-hover, .metric-card, .competitor-card').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
